@@ -1,5 +1,7 @@
 package com.rvrsmo.calc.view;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
@@ -17,7 +19,12 @@ public class Calculadora extends JFrame{
 	}
 	
 	private void organizarLayout() {
-		// TODO Auto-generated method stub
+		setLayout(new BorderLayout());
+		
+		Display display = new Display();
+		add(display, BorderLayout.NORTH);
+		Teclado teclado = new Teclado();
+		add(teclado, BorderLayout.CENTER);
 		
 	}
 

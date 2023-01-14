@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 public class Calculadora extends JFrame{
 	
 	public Calculadora() {
+		
+		organizarLayout();
+		
 		setSize(232, 322);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -13,6 +16,11 @@ public class Calculadora extends JFrame{
 		
 	}
 	
+	private void organizarLayout() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public static void main(String[] args) {
 		new Calculadora();
 	}

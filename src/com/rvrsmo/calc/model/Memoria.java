@@ -26,5 +26,11 @@ public class Memoria {
 	public String getTextoAtual() {
 		return textoAtual.isEmpty() ? "0": textoAtual;
 	}
+	
+	public void processarComando(String valor) {
+		textoAtual += valor;
+		
+		observadores.forEach(o -> o.valorAlterado(textoAtual));
+	}
 
 }

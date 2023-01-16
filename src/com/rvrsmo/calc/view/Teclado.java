@@ -42,7 +42,7 @@ public class Teclado extends JPanel {
 		adicionarBotao("6", COR_CINZA_CLARO, c, 2, 2);
 		adicionarBotao("-", COR_LARANJA, c, 3, 2);
 		
-		//Linha 4
+		// Linha 4
 		adicionarBotao("1", COR_CINZA_CLARO, c, 0, 3);
 		adicionarBotao("2", COR_CINZA_CLARO, c, 1, 3);
 		adicionarBotao("3", COR_CINZA_CLARO, c, 2, 3);

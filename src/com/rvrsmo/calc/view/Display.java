@@ -8,9 +8,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.rvrsmo.calc.model.Memoria;
+import com.rvrsmo.calc.model.MemoriaObservador;
 
 @SuppressWarnings("serial")
-public class Display extends JPanel {
+public class Display extends JPanel implements MemoriaObservador {
 	
 	private final JLabel label; 
 	
@@ -26,6 +27,11 @@ public class Display extends JPanel {
 		add(label); 
 		
 		
+	}
+	
+	@Override
+	public void valorAlterado(String novoValor) {
+		label.setText(novoValor);	
 	}
 
 }

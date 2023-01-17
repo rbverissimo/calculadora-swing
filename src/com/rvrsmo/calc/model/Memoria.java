@@ -34,6 +34,7 @@ public class Memoria {
 	public void processarComando(String texto) {
 		
 		TipoComando tipoComando = detectarTipoComando(texto);
+		System.out.println(tipoComando);
 		
 		if("AC".equals(texto)) {
 			textoAtual = ""; 
@@ -53,6 +54,21 @@ public class Memoria {
 			Integer.parseInt(texto);
 			return TipoComando.NUMERO;
 		} catch (NumberFormatException e) {
+			if("AC".equals(texto)) {
+				return TipoComando.ZERAR;
+			} else if("/".equals(texto)) {
+				return TipoComando.DIV;
+			} else if("*".equals(texto)) {
+				return TipoComando.MULT;
+			} else if("+".equals(texto)) {
+				return TipoComando.SOMA;
+			} else if("-".equals(texto)) {
+				return TipoComando.SUB;
+			} else if(",".equals(texto)) {
+				return TipoComando.VIRGULA;
+			} else if("=".equals(texto)) {
+				return TipoComando.IGUAL;
+			}
 			
 		}
 		

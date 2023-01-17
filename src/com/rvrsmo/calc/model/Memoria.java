@@ -86,8 +86,9 @@ public class Memoria {
 		}
 		
 		String resultadoString = Double.toString(resultado).replace(".", ",");
-		
-		return resultadoString; 
+		//tratamento da vírgula em caso de inteiros
+		boolean inteiro = resultadoString.endsWith(",0");
+		return inteiro ? resultadoString.replace(",0", "") : resultadoString;
 		
 	}
 

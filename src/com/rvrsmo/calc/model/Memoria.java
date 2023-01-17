@@ -49,11 +49,21 @@ public class Memoria {
 				tipoComando == TipoComando.VIRGULA) {
 			textoAtual = substituir ? texto : textoAtual + texto;
 			substituir = false; 
+		} else {
+			//o tratamento acontece na definição da variável no else de cima
+			substituir = true;
+			textoAtual = obterResultadoOperacao();
+			textoBuffer = textoAtual;
+			ultimaOperacao = tipoComando;
 		}
 		
 		
 		observadores.forEach(o -> o.valorAlterado(getTextoAtual()));
 		
+	}
+
+	private String obterResultadoOperacao() {
+		return null; 
 	}
 
 	private TipoComando detectarTipoComando(String texto) {

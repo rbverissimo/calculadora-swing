@@ -63,7 +63,32 @@ public class Memoria {
 	}
 
 	private String obterResultadoOperacao() {
-		return null; 
+		if(ultimaOperacao == null) {
+			return textoAtual;
+		}
+		
+		double numeroBuffer = Double.parseDouble(textoBuffer
+				.replace(",", "."));
+		double numeroAtual = Double.parseDouble(textoAtual
+				.replace(",", "."));
+		
+		double resultado = 0;
+		
+		if(ultimaOperacao == TipoComando.SOMA) {
+			resultado = numeroBuffer + numeroAtual; 
+		} else if(ultimaOperacao == TipoComando.SUB) {
+			resultado = numeroBuffer - numeroAtual;
+		} else if(ultimaOperacao == TipoComando.MULT) {
+			resultado = numeroBuffer * numeroAtual;
+		} else {
+			resultado = numeroBuffer / numeroAtual;
+			//TODO resolver o BO do número de casas após a vírgula
+		}
+		
+		String resultadoString = Double.toString(resultado).replace(".", ",");
+		
+		return resultadoString; 
+		
 	}
 
 	private TipoComando detectarTipoComando(String texto) {

@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Memoria {
 	
+	private enum TipoComando {
+			ZERAR, NUMERO, DIV, MULT, SUB, SOMA, IGUAL, VIRGULA;
+	};
+	
 	private static final Memoria instancia = new Memoria();
 	private final List<MemoriaObservador> observadores = new ArrayList<>();
 	
@@ -27,15 +31,22 @@ public class Memoria {
 		return textoAtual.isEmpty() ? "0": textoAtual;
 	}
 	
-	public void processarComando(String valor) {
+	public void processarComando(String texto) {
 		
-		if("AC".equals(valor)) {
+		TipoComando tipoComando = detectarTipoComando(texto);
+		
+		if("AC".equals(texto)) {
 			textoAtual = ""; 
 		} else {
-			textoAtual += valor;
+			textoAtual += texto;
 		}
 		observadores.forEach(o -> o.valorAlterado(getTextoAtual()));
 		
+	}
+
+	private TipoComando detectarTipoComando(String texto) {
+		
+		return null;
 	}
 
 }
